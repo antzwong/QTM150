@@ -1,0 +1,186 @@
+---
+title: "Final Project"
+author: "Anthony Wong"
+date: "12/2/2018"
+output:
+  html_document:
+    toc: true
+    number_sections: true
+---
+#Favorite Restaurants in Emory Village
+
+![](https://whatnowatlanta.com/wp-content/media/2017/12/Slice-and-Pint-Emory-Village.png)
+
+##Introduction
+For this project I wanted to investigate what the favorite restaurant of Emory students is. This is because Emory does not have a "college town" in its immediate vicinity and Emory village is the closest collection of stores there are to Emory. Besides finding out which restaurant is most popular, I'm also interested in the various factors that may influence student visits to Emory village such as whether or not someone has an income to support visiting Emory village, their year grade or if they are from Decatur, GA. 
+
+
+```{r echo = FALSE, message = FALSE, warnings = FALSE, results = 'hide'}
+library(dplyr)
+library(ggplot2)
+#library(RCurl)
+urlfile <- 'https://raw.githubusercontent.com/antzwong/QTM150/master/Data.csv'
+data <- read.csv(url(urlfile))
+
+
+#data$onlyFirst<-factor(NA,levels=c("Freshman", "Upperclassman"))
+#data$onlyFirst[data$Year=="First year"] <- "Freshman"
+#data$onlyFirst[data$Year=="Sophomore"] <- "Upperclassman"
+#data$onlyFirst[data$Year=="Junior"] <- "Upperclassman"
+#data$onlyFirst[data$Year=="Senior"] <- "Upperclassman"
+
+#data$onlyFirst
+```
+
+
+##The Data
+###Methodology
+The data was collected via survey sent online to group chats with which I was a part of such as the res life group chat, and my on campus job work chat. A sample of the survey can be found [here](https://docs.google.com/forms/d/e/1FAIpQLSc0b7y-RmXLYl1q3ZDF8fP8ropBRtZR1EoLuUhMTkuk5813CA/viewform?usp=sf_link). 
+The survey asked respondents what year they were in school, whether or not they had a job, how frequently they visisted Emory village, if they were from Decatur, GA and if they were from out of state, 
+
+
+###Results
+A total of 44 people responded, all of whom were Emory undergraduate students. I included a bonus question of how frequently students would go to a hypothetical Kung Fu Tea location in Emory village. However, I have not included it in this data for analysis because one respondent did not answer that question.
+
+Based off the data, the top three most popular restaurants in Emory village are:
+
+1. [Falfafel King](https://www.yelp.com/biz/falafel-king-atlanta) (15)
+
+2. [Chipotle](https://www.chipotle.com/) (10)
+
+3. [Dave's Cosmic Subs](https://www.davescosmicsubs.com/locations/atlanta-georgia/), [Lucky's Burger & Brew](http://www.luckysburgerandbrew.com/) (tie at 4)
+
+All other restaurants either did not get a vote (such as Saba or Zoe's Kitchen), or were mentioned only once (such as Wagaya). 
+
+The top three frequencies with which respondents went to Emory village were:
+
+1. Once every two weeks (15)
+
+2. Once a month (15)
+
+3. Once a week (9)
+
+
+
+
+```{r echo = FALSE}
+
+df <- data.frame(
+  Restaurant_Name = c("Falafel King", "Chipotle", "Dave's Cosmic Subs", "Lucky's Burger & Brew", "Panera", "Rise -n- Dine", "(Other)"),
+  FavoriteValue = c(15, 10, 4, 4, 3, 3, 5),
+  Frequency_Type = c("More than once a week", "Once a month", "Once a school year", "Once a semester", "Once a week", "Once every few months", "Once every two weeks"),
+  FrequencyValue = c(2, 10, 1, 1, 9, 6, 15)
+)
+
+
+
+
+firstPie <- ggplot(data = df, aes(x=Restaurant_Name, y=FavoriteValue, fill=Restaurant_Name)) + geom_bar(width = 0.5, stat = "identity") + labs(title = "Favorite Restaurants in Emory Village", x = "Restaurants", y = "Number of Responses") + theme(axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5))
+firstPie
+
+
+
+```
+
+
+###Frequency vs Restaurant
+```{r echo = FALSE, warning = FALSE}
+
+table(data$Favorite, data$Frequency)
+freqChi <- chisq.test(data$Favorite, data$Frequency)
+if(freqChi$p.value > 0.05) {
+  print("Not statistically significant")
+}
+
+
+```
+
+The p-value of the chisquared test comparing how frequently a respondent goes to Emory village with what their favorite restaurant is, is 0.6432. This meant that **there is no statistically significant relationship between a respondents favorite restaurant and how frequently they go to Emory village.**
+
+
+
+###Job vs Restaurant
+```{r echo = FALSE, warning = FALSE}
+table(data$Favorite, data$Job)
+jobChi <- chisq.test(data$Favorite, data$Job)
+if(jobChi$p.value > 0.05) {
+  print("Not statistically significant")
+}
+
+
+#table(data$Frequency, data$Job)
+#chisq.test(data$Frequency, data$Job)
+
+```
+
+
+The p-value of the chisquared test comparing whether or not the respondent has a job with their favorite restaurant has a p-value of 0.7888. This meant that **there is no statistically significant relationship between whether or not a respondent has a job and what their favorite restaurant is.**
+
+
+
+
+###Grade vs Restaurant
+```{r echo = FALSE, warning = FALSE}
+
+
+
+table(data$Favorite, data$Year)
+yearChi <- chisq.test(data$Favorite, data$Year)
+if(yearChi$p.value > 0.05) {
+  print("Not statistically significant")
+}
+
+
+
+
+
+```
+
+The p-value of the chisquared test comparing a respondents year in school with their favorite restaurant has a p-value of 0.3595. This meant that **there is no statistically significant relationship between a respondents year in school and their favorite restaurant.**
+
+
+The data was also broken down to analyze only first year students and non-first year students, repeating the experiments along the two categories. However, even then there was no statistically significant results. 
+
+``` {r echo = FALSE, warning = FALSE}
+
+Freshman <- filter(data, data$Year == "First year")
+Upperclassman <- filter(data, data$Year != "First year")
+
+table(Freshman$Favorite)
+table(Upperclassman$Favorite)
+
+chisq.test(Freshman$Favorite, Freshman$Job)
+chisq.test(Freshman$Favorite, Freshman$Frequency)
+chisq.test(Upperclassman$Favorite, Upperclassman$Frequency)
+chisq.test(Upperclassman$Favorite, Upperclassman$Job)
+
+
+
+
+```
+
+
+
+
+
+##Conclusion
+###Limitations
+
+There were many factors which restrict this survey. 
+
+1. **Specificity** -The questions were not as specific as they should have been. Within the job dataframe, it is possible that there would have been difference in income level which would impact how often someone goes to Emory Village, as opposed to simply having a job. Furthermore, all respondents answered that they have an Emory dining plan. While this is true, there are levels within the dining plan. Some students (primarily first and second year students) would have meal swipes in addition to dooley dollars while older students may only have dooley dollars, and thus have more of an incentive to eat at Emory village. This survey did not accurately capture those variations within each variable. 
+
+2. **Sampling** -Many of the respondents are first and second years who have similar social circles as I have. This means that the sample is not random and does not accurately represent the Emory undergraduate student body as a whole. 
+
+
+
+###Summary
+In simple terms, there is no significant relationship between a students favorite restaurant and their year, job status, and frequency of visits. This means that there is no way to successfully differentiate trends in Emory village visits between Emory students. Besides possibly helping stores in Emory Village market to students, this analysis bucks many traditional assumptions surrounding shopping habits. For example, it may be persumed that students who have jobs are more likely to visit Emory village because they have greater financial resources. This survey clearly demonstrates that this is not always the case, and that the Emory undergraduate student body is not homogonous or fit traditional assumptions. 
+
+
+
+
+
+
+
+
