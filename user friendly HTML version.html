@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<!-- saved from url=(0125)file://localhost/Users/hangwong/Desktop/Emory%20University/17-21/Year%202/Semester%203/QTM%20150/Final%20Project/Project.html -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+
+<meta name="generator" content="pandoc">
+
+
+<meta name="author" content="Anthony Wong">
+
+
+<title>Final Project</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+<script type="text/javascript" src="./knitted to html_files/MathJax.js"></script><style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Menu_Button .MathJax_Hover_Arrow {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; font-family: 'Courier New',Courier; font-size: 9px; color: #F0F0F0}
+.MathJax_Menu_Button .MathJax_Hover_Arrow span {display: block; background-color: #AAA; border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px}
+.MathJax_Hover_Arrow:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_Hover_Arrow:hover span {background-color: #CCC!important}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 5px 0px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px; -khtml-border-radius: 5px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 1px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: .7em}
+.MathJax_MenuRadioCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuLabel {padding: 1px 2em 3px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #DDDDDD; margin: 4px 3px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: #606872; color: white}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+</style><style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+.MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">.MJXp-script {font-size: .8em}
+.MJXp-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXp-bold {font-weight: bold}
+.MJXp-italic {font-style: italic}
+.MJXp-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-largeop {font-size: 150%}
+.MJXp-largeop.MJXp-int {vertical-align: -.2em}
+.MJXp-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXp-display {display: block; text-align: center; margin: 1em 0}
+.MJXp-math span {display: inline-block}
+.MJXp-box {display: block!important; text-align: center}
+.MJXp-box:after {content: " "}
+.MJXp-rule {display: block!important; margin-top: .1em}
+.MJXp-char {display: block!important}
+.MJXp-mo {margin: 0 .15em}
+.MJXp-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXp-denom {display: inline-table!important; width: 100%}
+.MJXp-denom > * {display: table-row!important}
+.MJXp-surd {vertical-align: top}
+.MJXp-surd > * {display: block!important}
+.MJXp-script-box > *  {display: table!important; height: 50%}
+.MJXp-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXp-script-box > *:last-child > * {vertical-align: bottom}
+.MJXp-script-box > * > * > * {display: block!important}
+.MJXp-mphantom {visibility: hidden}
+.MJXp-munderover {display: inline-table!important}
+.MJXp-over {display: inline-block!important; text-align: center}
+.MJXp-over > * {display: block!important}
+.MJXp-munderover > * {display: table-row!important}
+.MJXp-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXp-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXp-mtr {display: table-row!important}
+.MJXp-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXp-mtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-mlabeledtr {display: table-row!important}
+.MJXp-mlabeledtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mlabeledtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXp-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXp-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXp-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXp-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXp-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXp-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXp-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXp-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXp-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXp-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_PHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style></head>
+
+<body><div id="MathJax_Message" style="display: none;"></div>
+
+<style type="text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Final Project</h1>
+<h4 class="author"><em>Anthony Wong</em></h4>
+<h4 class="date"><em>12/2/2018</em></h4>
+
+</div>
+
+<div id="TOC">
+<ul>
+<li><a href="file://localhost/Users/hangwong/Desktop/Emory%20University/17-21/Year%202/Semester%203/QTM%20150/Final%20Project/Project.html#favorite-restaurants-in-emory-village"><span class="toc-section-number">1</span> Favorite Restaurants in Emory Village</a><ul>
+<li><a href="file://localhost/Users/hangwong/Desktop/Emory%20University/17-21/Year%202/Semester%203/QTM%20150/Final%20Project/Project.html#introduction"><span class="toc-section-number">1.1</span> Introduction</a></li>
+<li><a href="file://localhost/Users/hangwong/Desktop/Emory%20University/17-21/Year%202/Semester%203/QTM%20150/Final%20Project/Project.html#the-data"><span class="toc-section-number">1.2</span> The Data</a><ul>
+<li><a href="file://localhost/Users/hangwong/Desktop/Emory%20University/17-21/Year%202/Semester%203/QTM%20150/Final%20Project/Project.html#methodology"><span class="toc-section-number">1.2.1</span> Methodology</a></li>
+<li><a href="file://localhost/Users/hangwong/Desktop/Emory%20University/17-21/Year%202/Semester%203/QTM%20150/Final%20Project/Project.html#results"><span class="toc-section-number">1.2.2</span> Results</a></li>
+<li><a href="file://localhost/Users/hangwong/Desktop/Emory%20University/17-21/Year%202/Semester%203/QTM%20150/Final%20Project/Project.html#frequency-vs-restaurant"><span class="toc-section-number">1.2.3</span> Frequency vs Restaurant</a></li>
+<li><a href="file://localhost/Users/hangwong/Desktop/Emory%20University/17-21/Year%202/Semester%203/QTM%20150/Final%20Project/Project.html#job-vs-restaurant"><span class="toc-section-number">1.2.4</span> Job vs Restaurant</a></li>
+<li><a href="file://localhost/Users/hangwong/Desktop/Emory%20University/17-21/Year%202/Semester%203/QTM%20150/Final%20Project/Project.html#grade-vs-restaurant"><span class="toc-section-number">1.2.5</span> Grade vs Restaurant</a></li>
+</ul></li>
+<li><a href="file://localhost/Users/hangwong/Desktop/Emory%20University/17-21/Year%202/Semester%203/QTM%20150/Final%20Project/Project.html#conclusion"><span class="toc-section-number">1.3</span> Conclusion</a><ul>
+<li><a href="file://localhost/Users/hangwong/Desktop/Emory%20University/17-21/Year%202/Semester%203/QTM%20150/Final%20Project/Project.html#limitations"><span class="toc-section-number">1.3.1</span> Limitations</a></li>
+<li><a href="file://localhost/Users/hangwong/Desktop/Emory%20University/17-21/Year%202/Semester%203/QTM%20150/Final%20Project/Project.html#summary"><span class="toc-section-number">1.3.2</span> Summary</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+
+<div id="favorite-restaurants-in-emory-village" class="section level1">
+<h1><span class="header-section-number">1</span> Favorite Restaurants in Emory Village</h1>
+<div class="figure">
+
+
+</div>
+<div id="introduction" class="section level2">
+<h2><span class="header-section-number">1.1</span> Introduction</h2>
+<p>For this project I wanted to investigate what the favorite restaurant of Emory students is. This is because Emory does not have a “college town” in its immediate vicinity and Emory village is the closest collection of stores there are to Emory. Besides finding out which restaurant is most popular, I’m also interested in the various factors that may influence student visits to Emory village such as whether or not someone has an income to support visiting Emory village, their year grade or if they are from Decatur, GA.</p>
+<pre><code class="hljs">## Warning: package 'dplyr' was built under R version 3.4.4</code></pre>
+<pre><code class="hljs">## Warning: package 'ggplot2' was built under R version 3.4.4</code></pre>
+</div>
+<div id="the-data" class="section level2">
+<h2><span class="header-section-number">1.2</span> The Data</h2>
+<div id="methodology" class="section level3">
+<h3><span class="header-section-number">1.2.1</span> Methodology</h3>
+<p>The data was collected via survey sent online to group chats with which I was a part of such as the res life group chat, and my on campus job work chat. A sample of the survey can be found <a href="https://docs.google.com/forms/d/e/1FAIpQLSc0b7y-RmXLYl1q3ZDF8fP8ropBRtZR1EoLuUhMTkuk5813CA/viewform?usp=sf_link">here</a>. The survey asked respondents what year they were in school, whether or not they had a job, how frequently they visisted Emory village, if they were from Decatur, GA and if they were from out of state,</p>
+</div>
+<div id="results" class="section level3">
+<h3><span class="header-section-number">1.2.2</span> Results</h3>
+<p>A total of 44 people responded, all of whom were Emory undergraduate students. I included a bonus question of how frequently students would go to a hypothetical Kung Fu Tea location in Emory village. However, I have not included it in this data for analysis because one respondent did not answer that question.</p>
+<p>Based off the data, the top three most popular restaurants in Emory village are:</p>
+<ol style="list-style-type: decimal">
+<li><p><a href="https://www.yelp.com/biz/falafel-king-atlanta">Falfafel King</a> (15)</p></li>
+<li><p><a href="https://www.chipotle.com/">Chipotle</a> (10)</p></li>
+<li><p><a href="https://www.davescosmicsubs.com/locations/atlanta-georgia/">Dave’s Cosmic Subs</a>, <a href="http://www.luckysburgerandbrew.com/">Lucky’s Burger &amp; Brew</a> (tie at 4)</p></li>
+</ol>
+<p>All other restaurants either did not get a vote (such as Saba or Zoe’s Kitchen), or were mentioned only once (such as Wagaya).</p>
+<p>The top three frequencies with which respondents went to Emory village were:</p>
+<ol style="list-style-type: decimal">
+<li><p>Once every two weeks (15)</p></li>
+<li><p>Once a month (15)</p></li>
+<li><p>Once a week (9)</p></li>
+</ol>
+
+</div>
+<div id="frequency-vs-restaurant" class="section level3">
+<h3><span class="header-section-number">1.2.3</span> Frequency vs Restaurant</h3>
+<pre><code class="hljs">##                        
+##                         More than once a week Once a month
+##   Chipotle                                  1            1
+##   Dave's Cosmic Subs                        0            1
+##   Falafel King                              0            4
+##   Lucky's Burger &amp; Brew                     0            1
+##   Panera                                    1            1
+##   Rise -n- Dine                             0            1
+##   Wagaya                                    0            0
+##   Zoës Kitchen                              0            1
+##                        
+##                         Once a school year Once a semester Once a week
+##   Chipotle                               0               1           1
+##   Dave's Cosmic Subs                     0               0           1
+##   Falafel King                           0               0           3
+##   Lucky's Burger &amp; Brew                  0               0           1
+##   Panera                                 0               0           1
+##   Rise -n- Dine                          1               0           0
+##   Wagaya                                 0               0           2
+##   Zoës Kitchen                           0               0           0
+##                        
+##                         Once every few months Once every two weeks
+##   Chipotle                                  2                    4
+##   Dave's Cosmic Subs                        0                    2
+##   Falafel King                              2                    6
+##   Lucky's Burger &amp; Brew                     1                    1
+##   Panera                                    0                    0
+##   Rise -n- Dine                             0                    1
+##   Wagaya                                    1                    0
+##   Zoës Kitchen                              0                    1</code></pre>
+<pre><code class="hljs">## [1] "Not statistically significant"</code></pre>
+<p>The p-value of the chisquared test comparing how frequently a respondent goes to Emory village with what their favorite restaurant is, is 0.6432. This meant that <strong>there is no statistically significant relationship between a respondents favorite restaurant and how frequently they go to Emory village.</strong></p>
+</div>
+<div id="job-vs-restaurant" class="section level3">
+<h3><span class="header-section-number">1.2.4</span> Job vs Restaurant</h3>
+<pre><code class="hljs">##                        
+##                         No Yes
+##   Chipotle               5   5
+##   Dave's Cosmic Subs     3   1
+##   Falafel King           5  10
+##   Lucky's Burger &amp; Brew  1   3
+##   Panera                 1   2
+##   Rise -n- Dine          2   1
+##   Wagaya                 1   2
+##   Zoës Kitchen           1   1</code></pre>
+<pre><code class="hljs">## [1] "Not statistically significant"</code></pre>
+<p>The p-value of the chisquared test comparing whether or not the respondent has a job with their favorite restaurant has a p-value of 0.7888. This meant that <strong>there is no statistically significant relationship between whether or not a respondent has a job and what their favorite restaurant is.</strong></p>
+</div>
+<div id="grade-vs-restaurant" class="section level3">
+<h3><span class="header-section-number">1.2.5</span> Grade vs Restaurant</h3>
+<pre><code class="hljs">##                        
+##                         First year Junior Senior Sophomore
+##   Chipotle                       5      0      1         4
+##   Dave's Cosmic Subs             1      1      1         1
+##   Falafel King                   4      3      2         6
+##   Lucky's Burger &amp; Brew          1      0      0         3
+##   Panera                         0      1      0         2
+##   Rise -n- Dine                  0      0      1         2
+##   Wagaya                         0      2      0         1
+##   Zoës Kitchen                   2      0      0         0</code></pre>
+<pre><code class="hljs">## [1] "Not statistically significant"</code></pre>
+<p>The p-value of the chisquared test comparing a respondents year in school with their favorite restaurant has a p-value of 0.3595. This meant that <strong>there is no statistically significant relationship between a respondents year in school and their favorite restaurant.</strong></p>
+<p>The data was also broken down to analyze only first year students and non-first year students, repeating the experiments along the two categories. However, even then there was no statistically significant results.</p>
+<pre><code class="hljs">## 
+##              Chipotle    Dave's Cosmic Subs          Falafel King 
+##                     5                     1                     4 
+## Lucky's Burger &amp; Brew                Panera         Rise -n- Dine 
+##                     1                     0                     0 
+##                Wagaya          Zoës Kitchen 
+##                     0                     2</code></pre>
+<pre><code class="hljs">## 
+##              Chipotle    Dave's Cosmic Subs          Falafel King 
+##                     5                     3                    11 
+## Lucky's Burger &amp; Brew                Panera         Rise -n- Dine 
+##                     3                     3                     3 
+##                Wagaya          Zoës Kitchen 
+##                     3                     0</code></pre>
+<pre><code class="hljs">## 
+##  Pearson's Chi-squared test
+## 
+## data:  Freshman$Favorite and Freshman$Job
+## X-squared = 1.4517, df = 4, p-value = 0.8352</code></pre>
+<pre><code class="hljs">## 
+##  Pearson's Chi-squared test
+## 
+## data:  Freshman$Favorite and Freshman$Frequency
+## X-squared = 10.887, df = 12, p-value = 0.5386</code></pre>
+<pre><code class="hljs">## 
+##  Pearson's Chi-squared test
+## 
+## data:  Upperclassman$Favorite and Upperclassman$Frequency
+## X-squared = 39.418, df = 36, p-value = 0.3196</code></pre>
+<pre><code class="hljs">## 
+##  Pearson's Chi-squared test
+## 
+## data:  Upperclassman$Favorite and Upperclassman$Job
+## X-squared = 6.2323, df = 6, p-value = 0.3977</code></pre>
+</div>
+</div>
+<div id="conclusion" class="section level2">
+<h2><span class="header-section-number">1.3</span> Conclusion</h2>
+<div id="limitations" class="section level3">
+<h3><span class="header-section-number">1.3.1</span> Limitations</h3>
+<p>There were many factors which restrict this survey.</p>
+<ol style="list-style-type: decimal">
+<li><p><strong>Specificity</strong> -The questions were not as specific as they should have been. Within the job dataframe, it is possible that there would have been difference in income level which would impact how often someone goes to Emory Village, as opposed to simply having a job. Furthermore, all respondents answered that they have an Emory dining plan. While this is true, there are levels within the dining plan. Some students (primarily first and second year students) would have meal swipes in addition to dooley dollars while older students may only have dooley dollars, and thus have more of an incentive to eat at Emory village. This survey did not accurately capture those variations within each variable.</p></li>
+<li><p><strong>Sampling</strong> -Many of the respondents are first and second years who have similar social circles as I have. This means that the sample is not random and does not accurately represent the Emory undergraduate student body as a whole.</p></li>
+</ol>
+</div>
+<div id="summary" class="section level3">
+<h3><span class="header-section-number">1.3.2</span> Summary</h3>
+<p>In simple terms, there is no significant relationship between a students favorite restaurant and their year, job status, and frequency of visits. This means that there is no way to successfully differentiate trends in Emory village visits between Emory students. Besides possibly helping stores in Emory Village market to students, this analysis bucks many traditional assumptions surrounding shopping habits. For example, it may be persumed that students who have jobs are more likely to visit Emory village because they have greater financial resources. This survey clearly demonstrates that this is not always the case, and that the Emory undergraduate student body is not homogonous or fit traditional assumptions.</p>
+</div>
+</div>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+
+
+</body></html>
+
